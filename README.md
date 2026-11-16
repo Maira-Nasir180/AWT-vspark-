@@ -1,5 +1,5 @@
 # VSPARK Portal
-deploy
+deployh
 
 Competition-day portal for the VSPARK Prompt Engineering Competition (AI Video Generation Challenge) at COMSATS University Islamabad, Vehari Campus.
 
