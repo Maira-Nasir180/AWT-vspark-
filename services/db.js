@@ -298,14 +298,18 @@ async function createAttempt(registrationId, startedAt, endsAt, durationMinutes)
 }
 
 async function updateSubmission(registrationId, driveLink, now) {
-  const patch = { "submission.driveLink": driveLink, "submission.updatedAt": now };
   if (IS_MONGO) {
     const col = (await db()).collection("attempts");
     const existing = await col.findOne({ registrationId }, { projection: { _id: 0 } });
     if (!existing) return null;
-    // Set submittedAt only on first submission.
-    if (!existing.submission?.submittedAt) patch["submission.submittedAt"] = now;
-    await col.updateOne({ registrationId }, { $set: patch });
+    // Poora submission object set karo (submission null ho toh dotted $set fail hota tha).
+    const submission = {
+      ...(existing.submission || {}),
+      driveLink,
+      updatedAt: now,
+    };
+    if (!submission.submittedAt) submission.submittedAt = now;
+    await col.updateOne({ registrationId }, { $set: { submission } });
     return col.findOne({ registrationId }, { projection: { _id: 0 } });
   }
   const list = readJson("attempts.json", []);
