@@ -1,6 +1,7 @@
 # VSPARK 2025 – Prompt Engineering Competition
 
 🌐 **Live Website:** [Visit VSPARK](https://awt-vspark-oml03amv0-maira20.vercel.app/)
+**Live Website:** https://awt-vspark-oml03amv0-maira20.vercel.app/
 
 VSPARK is a web-based platform developed for an AI Video Generation and Prompt Engineering Competition at **COMSATS University Islamabad, Vehari Campus**.
 
@@ -65,15 +66,5 @@ VSPARK is designed to provide a digital platform for organizing an AI Video Gene
 
 The project is deployed using Vercel.
 
-**Live Website:** https://awt-vspark-oml03amv0-maira20.vercel.app/
 
-## 👩‍💻 Developer
 
-**Maira Nasir**
-
-BS Software Engineering  
-COMSATS University Islamabad, Vehari Campus
-
----
-
-*VSPARK – Turning Creative Prompts into AI-Generated Stories.*
